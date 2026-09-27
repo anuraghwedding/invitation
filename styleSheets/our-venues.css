@@ -1,0 +1,1196 @@
+/* =========================================================
+   OUR VENUES — ROYAL INDIAN WEDDING STYLE
+   HTML + JS UNCHANGED
+   ========================================================= */
+
+:root {
+    --emerald: #073f35;
+    --emerald-dark: #032b25;
+    --emerald-light: #0d5c4c;
+
+    --gold: #d4a84f;
+    --gold-light: #f4d98b;
+    --gold-soft: rgba(212, 168, 79, 0.28);
+
+    --ivory: #fff9ec;
+    --cream: #f8eed9;
+
+    --wine: #721d36;
+    --rose: #b94d62;
+
+    --text-dark: #173c35;
+    --text-muted: #66746e;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.venues-page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    padding: 90px 6vw 70px;
+
+    background:
+        radial-gradient(
+            circle at 8% 15%,
+            rgba(244, 217, 139, 0.22),
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 92% 10%,
+            rgba(185, 77, 98, 0.18),
+            transparent 23%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(212, 168, 79, 0.15),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #063c32 0%,
+            #075044 38%,
+            #06382f 70%,
+            #032923 100%
+        );
+
+    color: var(--ivory);
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   LUXURY LIGHT GLOW
+   ========================================================= */
+
+.venues-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 30%,
+            rgba(255, 255, 255, 0.06),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 50% 70%,
+            rgba(212, 168, 79, 0.05),
+            transparent 40%
+        );
+
+    pointer-events: none;
+    z-index: -2;
+}
+
+
+/* =========================================================
+   SUBTLE GOLD FRAME
+   ========================================================= */
+
+.venues-page::after {
+    content: "";
+
+    position: absolute;
+    inset: 18px;
+
+    border: 1px solid rgba(244, 217, 139, 0.35);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   BACKGROUND ORNAMENTS
+   ========================================================= */
+
+.venue-bg-title {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) rotate(-90deg);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(80px, 15vw, 220px);
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    color: rgba(244, 217, 139, 0.035);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   DECORATIVE LEAVES
+   ========================================================= */
+
+.venue-leaf {
+    position: absolute;
+
+    font-size: 90px;
+
+    color: rgba(244, 217, 139, 0.55);
+
+    opacity: 0.55;
+
+    pointer-events: none;
+
+    filter: drop-shadow(
+        0 5px 15px rgba(0, 0, 0, 0.18)
+    );
+}
+
+.leaf-left {
+    left: -15px;
+    top: 100px;
+
+    transform: rotate(-25deg);
+}
+
+.leaf-right {
+    right: -15px;
+    bottom: 100px;
+
+    transform: rotate(155deg);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.venues-header {
+    position: relative;
+
+    max-width: 900px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+
+    z-index: 5;
+}
+
+.venues-header::before {
+    content: "✦";
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--gold-light);
+
+    font-size: 18px;
+
+    letter-spacing: 10px;
+}
+
+
+.venues-header h1,
+.venues-header .title,
+.venues-header h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(42px, 6vw, 76px);
+
+    font-weight: 500;
+
+    letter-spacing: 0.04em;
+
+    margin: 0;
+
+    color: var(--ivory);
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.22);
+}
+
+
+.venues-header p {
+    margin: 18px auto 0;
+
+    max-width: 620px;
+
+    font-family: "Trebuchet MS", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 249, 236, 0.72);
+}
+
+
+/* =========================================================
+   GOLD DIVIDER
+   ========================================================= */
+
+.venues-header::after {
+    content: "";
+
+    display: block;
+
+    width: 120px;
+    height: 1px;
+
+    margin: 28px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold-light),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   VENUES LAYOUT
+   ========================================================= */
+
+.venues-layout {
+    position: relative;
+
+    max-width: 1450px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        170px
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 45px;
+}
+
+
+/* =========================================================
+   VENUE PANEL
+   ========================================================= */
+
+.venue-panel {
+    position: relative;
+
+    opacity: 0;
+
+    transform:
+        translateY(70px)
+        scale(0.97);
+
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+
+    min-width: 0;
+}
+
+
+.venue-panel.venue-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   PHOTO
+   ========================================================= */
+
+.venue-photo {
+    position: relative;
+
+    height: 430px;
+
+    overflow: hidden;
+
+    border-radius: 170px 170px 20px 20px;
+
+    border: 1px solid rgba(244, 217, 139, 0.7);
+
+    background: var(--emerald-dark);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.32),
+        0 0 0 8px rgba(244, 217, 139, 0.045);
+
+    transition:
+        transform 0.7s ease,
+        box-shadow 0.7s ease;
+}
+
+
+.venue-panel:hover .venue-photo {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 35px 75px rgba(0, 0, 0, 0.38),
+        0 0 0 8px rgba(244, 217, 139, 0.08),
+        0 0 35px rgba(212, 168, 79, 0.12);
+}
+
+
+.venue-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.8s ease;
+}
+
+
+.venue-panel:hover .venue-photo img {
+    transform: scale(1.06);
+
+    filter: saturate(1.08);
+}
+
+
+/* =========================================================
+   PHOTO OVERLAY
+   ========================================================= */
+
+.venue-photo::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(3, 43, 37, 0.02),
+            rgba(3, 43, 37, 0.08) 50%,
+            rgba(3, 43, 37, 0.55)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   VENUE NUMBER
+   ========================================================= */
+
+.venue-number {
+    position: absolute;
+
+    top: 22px;
+    left: 22px;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(3, 43, 37, 0.88);
+
+    border: 1px solid var(--gold-light);
+
+    color: var(--gold-light);
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    z-index: 3;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   PHOTO NAME
+   ========================================================= */
+
+.photo-name {
+    position: absolute;
+
+    left: 28px;
+    bottom: 25px;
+
+    z-index: 4;
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    letter-spacing: 0.08em;
+
+    color: white;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================================
+   PAPER INFORMATION CARD
+   ========================================================= */
+
+.venue-paper {
+    position: relative;
+
+    margin:
+        -75px
+        28px
+        0;
+
+    padding:
+        40px
+        34px
+        35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf6,
+            #f7ecd6
+        );
+
+    color: var(--text-dark);
+
+    border-radius:
+        8px
+        8px
+        35px
+        8px;
+
+    border: 1px solid
+        rgba(212, 168, 79, 0.65);
+
+    box-shadow:
+        0 25px 45px rgba(0, 0, 0, 0.22);
+
+    z-index: 5;
+
+    transition:
+        transform 0.6s ease,
+        box-shadow 0.6s ease;
+}
+
+
+.venue-panel:hover .venue-paper {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 32px 55px rgba(0, 0, 0, 0.27);
+}
+
+
+/* =========================================================
+   PAPER DECORATIVE CORNER
+   ========================================================= */
+
+.venue-paper::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    color: var(--gold);
+
+    font-size: 20px;
+}
+
+
+.venue-paper::after {
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+    right: 20px;
+    top: 20px;
+    bottom: 20px;
+
+    border: 1px solid
+        rgba(212, 168, 79, 0.22);
+
+    border-radius: 5px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PAPER LABEL
+   ========================================================= */
+
+.paper-label {
+    position: relative;
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    padding: 7px 14px;
+
+    border-radius: 30px;
+
+    background: var(--emerald);
+
+    color: var(--gold-light);
+
+    font-family:
+        "Trebuchet MS",
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   VENUE TITLE
+   ========================================================= */
+
+.venue-paper h2,
+.venue-paper h3 {
+    position: relative;
+
+    margin: 0 0 10px;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(28px, 3vw, 40px);
+
+    font-weight: 500;
+
+    color: var(--emerald);
+
+    letter-spacing: 0.02em;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.paper-location {
+    position: relative;
+
+    margin-bottom: 20px;
+
+    color: var(--wine);
+
+    font-family:
+        "Trebuchet MS",
+        sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   GOLD LINE
+   ========================================================= */
+
+.paper-line {
+    width: 70px;
+
+    height: 2px;
+
+    margin: 18px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.paper-description {
+    position: relative;
+
+    font-family:
+        "Trebuchet MS",
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: var(--text-muted);
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+.paper-events {
+    position: relative;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(23, 60, 53, 0.12);
+
+    z-index: 2;
+}
+
+
+.paper-events strong {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--emerald);
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+}
+
+
+.paper-events span {
+    display: inline-block;
+
+    margin: 4px 5px 4px 0;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(7, 63, 53, 0.07);
+
+    color: var(--wine);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   MAP BUTTON
+   ========================================================= */
+
+.venue-map {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 25px;
+
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    background: var(--emerald);
+
+    color: var(--gold-light);
+
+    text-decoration: none;
+
+    font-family:
+        "Trebuchet MS",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    border: 1px solid var(--gold);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease;
+
+    z-index: 3;
+}
+
+
+.venue-map:hover {
+    transform: translateY(-3px);
+
+    background: var(--gold);
+
+    color: var(--emerald-dark);
+}
+
+
+/* =========================================================
+   CENTER JOURNEY CARD
+   ========================================================= */
+
+.venue-middle {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.journey-card {
+    position: relative;
+
+    width: 145px;
+    height: 145px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff9ec 0%,
+            #f5e4bc 100%
+        );
+
+    border:
+        2px solid
+        var(--gold);
+
+    color: var(--emerald);
+
+    box-shadow:
+        0 0 0 8px rgba(244, 217, 139, 0.08),
+        0 20px 40px rgba(0, 0, 0, 0.25);
+
+    animation:
+        journeyFloat 4s ease-in-out infinite;
+}
+
+
+.journey-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border:
+        1px dashed
+        rgba(114, 29, 54, 0.4);
+
+    border-radius: 50%;
+}
+
+
+.journey-card::after {
+    content: "✦";
+
+    position: absolute;
+
+    top: -18px;
+
+    color: var(--gold-light);
+
+    font-size: 22px;
+}
+
+
+.journey-card span {
+    font-family:
+        "Trebuchet MS",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    color: var(--wine);
+
+    z-index: 2;
+}
+
+
+.journey-card strong {
+    margin-top: 5px;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    z-index: 2;
+}
+
+
+@keyframes journeyFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================================================
+   BOTTOM SECTION
+   ========================================================= */
+
+.venues-bottom {
+    max-width: 900px;
+
+    margin: 80px auto 0;
+
+    text-align: center;
+}
+
+
+.venues-bottom p {
+    margin: 0;
+
+    color: rgba(255, 249, 236, 0.7);
+
+    font-family:
+        "Trebuchet MS",
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.1em;
+}
+
+
+.venues-bottom::before {
+    content: "❧  ✦  ❧";
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--gold-light);
+
+    letter-spacing: 10px;
+}
+
+
+/* =========================================================
+   FLOATING GOLD PARTICLES
+   ========================================================= */
+
+.venues-page .venue-leaf::after {
+    content: "✦";
+
+    position: absolute;
+
+    top: 70px;
+    left: 30px;
+
+    font-size: 16px;
+
+    color: var(--gold-light);
+
+    animation:
+        sparkle 3s ease-in-out infinite;
+}
+
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .venues-page {
+        padding:
+            75px
+            35px
+            60px;
+    }
+
+    .venues-layout {
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap: 45px;
+    }
+
+    .venue-middle {
+        grid-column: 1 / -1;
+
+        grid-row: 2;
+    }
+
+    .journey-card {
+        width: 125px;
+        height: 125px;
+    }
+
+    .venue-photo {
+        height: 380px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .venues-page {
+        padding:
+            65px
+            18px
+            45px;
+    }
+
+    .venues-page::after {
+        inset: 10px;
+    }
+
+    .venue-bg-title {
+        display: none;
+    }
+
+    .venues-header {
+        margin-bottom: 50px;
+    }
+
+    .venues-header h1,
+    .venues-header .title,
+    .venues-header h2 {
+        font-size: 42px;
+    }
+
+    .venues-header p {
+        font-size: 10px;
+
+        letter-spacing: 0.12em;
+    }
+
+    .venues-layout {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 55px;
+    }
+
+    .venue-panel {
+        width: 100%;
+    }
+
+    .venue-photo {
+        height: 360px;
+
+        border-radius:
+            140px
+            140px
+            18px
+            18px;
+    }
+
+    .venue-paper {
+        margin:
+            -55px
+            12px
+            0;
+
+        padding:
+            34px
+            25px
+            28px;
+    }
+
+    .venue-paper h2,
+    .venue-paper h3 {
+        font-size: 30px;
+    }
+
+    .journey-card {
+        width: 120px;
+        height: 120px;
+    }
+
+    .venue-leaf {
+        font-size: 55px;
+    }
+
+    .leaf-left {
+        top: 50px;
+        left: -20px;
+    }
+
+    .leaf-right {
+        bottom: 50px;
+        right: -20px;
+    }
+
+    .venues-bottom {
+        margin-top: 60px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .venues-page {
+        padding:
+            55px
+            12px
+            40px;
+    }
+
+    .venues-header h1,
+    .venues-header .title,
+    .venues-header h2 {
+        font-size: 35px;
+    }
+
+    .venue-photo {
+        height: 320px;
+    }
+
+    .venue-paper {
+        margin:
+            -45px
+            7px
+            0;
+
+        padding:
+            30px
+            20px
+            25px;
+    }
+
+    .venue-number {
+        width: 45px;
+        height: 45px;
+
+        top: 15px;
+        left: 15px;
+    }
+
+    .photo-name {
+        left: 20px;
+        bottom: 20px;
+
+        font-size: 20px;
+    }
+
+    .venue-map {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .venue-panel,
+    .venue-photo,
+    .venue-photo img,
+    .venue-paper,
+    .journey-card {
+        transition: none !important;
+        animation: none !important;
+    }
+}
