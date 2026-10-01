@@ -164,6 +164,16 @@
     transition: border-color 0.2s;
 }
 
+.rsvp-full {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    color: #a4502d;
+}
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: #8c7f73;
